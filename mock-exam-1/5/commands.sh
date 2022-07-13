@@ -1,0 +1,3 @@
+#!/bin/bash
+
+k expose pod messaging --port=6379 --name=messaging-service
