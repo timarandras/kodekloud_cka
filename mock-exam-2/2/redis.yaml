@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: redis-storage
+  name: redis-storage
+spec:
+  containers:
+  - image: redis:alpine
+    name: redis-storage
+    resources: {}
+    volumeMounts:
+    - name: temp
+      mountPath: /data/redis
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  volumes:
+  - name: temp
+    emptyDir: {}
